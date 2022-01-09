@@ -8,18 +8,18 @@ public class Cycle {
         int i = 6;
         while(i > -7) {
             System.out.println(i);
-            i = i - 2;
+            i -= 2;
         } 
 
-        int result = 0;
+        int sumOdd = 0;
         int j = 10;
         do {
             if(j % 2 != 0) {
-                result = result + j;
+                sumOdd += j;
             } 
             j++;
         } while (j <= 20);
 
-        System.out.println("The sum of odd numbers between 10 and 20 makes " + result);
+        System.out.println("The sum of odd numbers between 10 and 20 makes " + sumOdd);
     }
 }

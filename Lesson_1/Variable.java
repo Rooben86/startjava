@@ -4,7 +4,7 @@ public class Variable {
         byte cores = 2;
         short frequency = 2100;
         int ram = 12288;
-        long systemtype = 64000;
+        long systemТype = 64000;
         float frequencyHz = 2.1f;
         double ramGb = 12.3;
         char owner = 'R';
