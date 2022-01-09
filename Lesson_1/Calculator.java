@@ -1,9 +1,9 @@
 public class Calculator {
     
     public static void main(String[] args) {
-        int num1 = 5;
-        int num2 = 5;
-        char operation = '^';
+        int num1 = 3;
+        int num2 = 4;
+        char operation = '%';
         int result = 0;
         if(operation == '+') {
             result = num1 + num2;

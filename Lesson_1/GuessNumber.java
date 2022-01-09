@@ -10,7 +10,7 @@ public class GuessNumber {
                     guess--;
                 } else {
                     System.out.println("Данное число меньше того, что загадал компьютер");
-                guess++;
+                    guess++;
                 } 
             } 
         System.out.println("Поздравляю, число угадано! Это " + randomNumber);

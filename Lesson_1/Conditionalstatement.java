@@ -23,10 +23,10 @@ public class ConditionalStatement {
             System.out.println("taller than 1.8m");
         }
 
-        char namesFirstCase = 'I';
-        if (namesFirstCase == 'M') {
+        char firstLetterName = 'I';
+        if (firstLetterName == 'M') {
             System.out.println("The name starts with M");
-        } else if (namesFirstCase == 'I') {
+        } else if (firstLetterName == 'I') {
             System.out.println("The name starts with I");
         } else {
             System.out.println("The name starts with neither M nor I");
