@@ -9,15 +9,14 @@ public class Variable {
         double ramGb = 12.3;
         char owner = 'R';
         boolean windows = true;
-        String result = "homework done!";
-
+        
         System.out.println(cores);
         System.out.println(frequency);
         System.out.println(ram);
         System.out.println(systemtype);
         System.out.println(frequencyHz);
         System.out.println(ramGb);
+        System.out.println(owner);
         System.out.println(windows);
-        System.out.println(result);
     }
 }
