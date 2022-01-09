@@ -1,9 +1,6 @@
-import java.lang.String;
-
 public class Variable {
     
     public static void main(String[] args) {
-
         byte cores = 2;
         short frequency = 2100;
         int ram = 12288;
@@ -22,7 +19,5 @@ public class Variable {
         System.out.println(ramGb);
         System.out.println(windows);
         System.out.println(result);
-
-
     }
 }
