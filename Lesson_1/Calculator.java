@@ -1,9 +1,9 @@
 public class Calculator {
     
     public static void main(String[] args) {
-        int num1 = 3;
-        int num2 = 4;
-        char operation = '%';
+        int num1 = 2;
+        int num2 = 0;
+        char operation = '^';
         int result = 0;
         if(operation == '+') {
             result = num1 + num2;
@@ -16,11 +16,9 @@ public class Calculator {
         } else if(operation == '%') {
             result = num1 % num2;
         } else if(operation == '^') {
-            int x = 1;
-            result = num1;
-            while(x < num2) {
+            result = 1;
+            for(int i = 0; i < num2; i++) {
                 result *= num1;
-                x++; 
             }
         }
         System.out.println(result);
