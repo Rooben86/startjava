@@ -1,7 +1,6 @@
 public class WolfTest {
     
     public static void main(String[] args) {
-        
         Wolf wolfOne = new Wolf("male", "Snoopy", 60, 3, "grey"); 
         
         System.out.println("This wolf is " + wolfOne.sex);
