@@ -9,11 +9,11 @@ public class Jaeger {
         return modelName;
     }   
 
-    void setModelName(String smth) {
-        if(smth == "") {
+    void setModelName(String modelName) {
+        if(modelName == "") {
             System.out.println("Пустая строка");
         } else {
-        this.modelName = smth;
+        this.modelName = modelName;
         }
     }
 
@@ -54,7 +54,7 @@ public class Jaeger {
     }
 
     public String makePowerMove() {
-        return "Power Move";
+        return "PowerMove";
     }
 
     public void useWeapon() {

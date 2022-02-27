@@ -1,55 +1,40 @@
-import java.util.Random;
 import java.util.Scanner;
+import java.util.Random;
 
 public class GuessNumber {
-    public static void startGame() {
-        
-        int randomNumber = new Random().nextInt(100) + 1;
-        int guessP1 = 0;
-        int guessP2 = 0;
+    
+    Player p1;
+    Player p2;
+    int playerGuess = -1;
 
-        boolean p1isRight = false;
-        boolean p2isRight = false;
-
+    public void play() {
         Scanner scanner = new Scanner(System.in);
-    
-        System.out.println("Введите имя первого игрока:");
-        Player p1 = new Player(scanner.nextLine());
-        System.out.println("Первого игрока зовут: "+ p1.name);
-    
-        System.out.println("Введите имя второго игрока:");
-        Player p2 = new Player(scanner.nextLine());
-        System.out.println("Второго игрока зовут: "+ p2.name);
-
+        int randomNumber = new Random().nextInt(100) + 1;
+        System.out.println("Компьютер загадал число " + "(" + randomNumber + ")");
+        
         while(true) {
-            System.out.println("Число, которое нужно угадать - " + randomNumber);
-
-            p1.guess();
-            p2.guess();
-
-            guessP1 = p1.number;
-            System.out.println(p1.name + " думает, что это - " + guessP1);
-
-            guessP2 = p2.number;
-            System.out.println(p2.name + " думает, что это - " + guessP2);
-
-            if (guessP1 == randomNumber) {
-                p1isRight = true;
-            }
-
-            if (guessP2 == randomNumber) {
-                p2isRight = true;
-            }
-
-            if(p1isRight || p2isRight) {
-                System.out.println("У нас есть победитель!");
-                System.out.println(p1.name + " угадал? " + p1isRight );
-                System.out.println(p2.name + " угадал? " + p2isRight );
-                System.out.println("Конец игры.");
-                break;
-            } else {
-                System.out.println("еще одна попытка");
-            }
+            System.out.println(p1.getName() + ", твоя очередь угадывать число!");
+            p1.setGuess(scanner.nextInt());
+            playerGuess = p1.getGuess();
+            if(playerGuess > randomNumber) {
+                System.out.println("Данное число больше того, что загадал компьютер");
+                } else if (playerGuess < randomNumber) {
+                System.out.println("Данное число меньше того, что загадал компьютер");
+                } else {
+                    System.out.println("Поздравляю, " + p1.getName() + " угадал число! Это " + playerGuess);
+                    break;
+                }
+            System.out.println(p2.getName() + ", твоя очередь угадывать число!");
+            p2.setGuess(scanner.nextInt());
+            playerGuess = p2.getGuess();
+            if(playerGuess > randomNumber) {
+                System.out.println("Данное число больше того, что загадал компьютер");
+                } else if (playerGuess < randomNumber) {
+                System.out.println("Данное число меньше того, что загадал компьютер");
+                } else {
+                    System.out.println("Поздравляю, " + p2.getName() + " угадал число! Это " + playerGuess);
+                    break;
+                }
         }
     }
 }

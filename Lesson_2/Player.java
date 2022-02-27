@@ -1,15 +1,21 @@
-import java.util.Scanner;
-
-class Player {
+public class Player {
     
-    String name;
-    int number = 0;
+    private String name;
+    private int guess;
 
     public Player(String name) {
         this.name = name;
     }
 
-    public void guess() {
-        number = (int) (Math.random() * 100 + 1);
+    public String getName() {
+        return name;
+    }
+
+    public void setGuess(int guess) {
+        this.guess = guess;
+    }
+
+    public int getGuess() {
+        return guess;
     }
 }

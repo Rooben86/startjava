@@ -1,31 +1,35 @@
 public class Calculator {
     
-    public int calculate(int num1, char operation, int num2) {
-        int result = 0;
+    int num1;
+    int num2;
+    char operation;
+    int result = 0;
+
+    public int calc() {
         switch(operation) {
-            case '+' :
+            case '+':
                 result = num1 + num2;
                 break;
-            case '-' :
+            case '-':
                 result = num1 - num2;
                 break;
-            case '*' :
+            case '*':
                 result = num1 * num2;
                 break;
-            case '/' :
+            case '/':
                 result = num1 / num2;
                 break;
-            case '%' :
+            case '%':
                 result = num1 % num2;
                 break;
-            case '^' :
+            case '^':
                 result = 1;
                 for(int i = 0; i < num2; i++) {
-                    result *= num1;
+                    result = num1 * result;
                 }
-                
+                break;
             default:
-                System.out.println("Некорректная операция. Выберите символы +, -, *, /, % или ^");
+                System.out.println("некорректная команда");
         }
         return result;
     }
