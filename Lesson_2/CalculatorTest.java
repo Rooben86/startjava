@@ -5,26 +5,23 @@ public class CalculatorTest {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Calculator calculator = new Calculator();
-        String prompt;
+        String prompt = "yes";
 
-        do {
+        while(prompt.equalsIgnoreCase("yes")) {
             System.out.println("Введите первое число:");
-            calculator.num1 = scanner.nextInt();
+            calculator.setNum1(scanner.nextInt());
             System.out.println("Введите второе число:");
-            calculator.num2 = scanner.nextInt();
+            calculator.setNum2(scanner.nextInt());
             System.out.println("Введите знак математической операции:");
-            calculator.operation = scanner.next().charAt(0);
+            calculator.setOperation(scanner.next().charAt(0));
             System.out.println(calculator.calc());
-            System.out.println("Хотите продолжить вычисления? [yes/no]:");
-            prompt = scanner.next();
-            while(!prompt.equalsIgnoreCase("yes")) {
+            do {
+                System.out.println("Хотите продолжить вычисления? [yes/no]:");
+                prompt = scanner.next();
                 if (prompt.equalsIgnoreCase("no")) {
                     break;
-                } else {
-                    System.out.println("Хотите продолжить вычисления? [yes/no]:");
-                    prompt = scanner.next();
                 }
-            }
-        } while(prompt.equalsIgnoreCase("yes"));
+            } while(!prompt.equalsIgnoreCase("yes"));
+        }
     }
 }
