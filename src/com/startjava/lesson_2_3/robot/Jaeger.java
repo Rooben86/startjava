@@ -1,9 +1,18 @@
+package com.startjava.lesson_2_3.robot;
+
 public class Jaeger {
     
     private String modelName;
     private String origin;
     private float height;
     private int strength;
+
+    public Jaeger(String modelName, String origin, float height, int strength) {
+        this.modelName = modelName;
+        this.origin = origin;
+        this.height = height;
+        this.strength = strength;
+    }
     
     public String getModelName() {
         return modelName;
@@ -59,5 +68,12 @@ public class Jaeger {
 
     public void useWeapon() {
         System.out.println("activated");
+    }
+
+    public String toString() {
+        return "modelName= " + modelName + 
+            ", origin= " + origin +
+            ", height=" + height +
+            " strength=" + strength;
     }
 }

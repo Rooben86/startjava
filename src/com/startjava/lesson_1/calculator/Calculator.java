@@ -1,9 +1,11 @@
+package com.startjava.lesson_1.calculator;
+
 public class Calculator {
     
     public static void main(String[] args) {
         int num1 = 2;
-        int num2 = 0;
-        char operation = '^';
+        int num2 = 3;
+        char operation = '+';
         int result = 0;
         if(operation == '+') {
             result = num1 + num2;
