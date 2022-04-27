@@ -11,11 +11,7 @@ public class CalculatorTest {
 
         while(answer.equalsIgnoreCase("yes")) {
             System.out.print("Введите математическое выражение:");
-            String input = scanner.nextLine();
-            String[] str = input.split(" ");
-            calculator.setNum1(Integer.parseInt(str[0]));
-            calculator.setOperation(str[1].charAt(0));
-            calculator.setNum2(Integer.parseInt(str[2]));
+            calculator.setInput(scanner.nextLine());
             System.out.println(calculator.calc());
             do {
                 System.out.println("Хотите продолжить вычисления? [yes/no]:");
