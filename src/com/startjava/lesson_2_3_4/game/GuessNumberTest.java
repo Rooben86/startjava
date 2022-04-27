@@ -21,12 +21,9 @@ public class GuessNumberTest {
         while(option.equalsIgnoreCase("yes")) {
             guessNumber.play();
             do {
-                System.out.println("Хотите продолжить игру? [yes/no]:");
+                System.out.println("\nХотите продолжить игру? [yes/no]:");
                 option = scanner.next();
-                if (option.equalsIgnoreCase("no")) {
-                    break;
-                } 
-            } while(!option.equalsIgnoreCase("yes"));
+            } while(!option.equalsIgnoreCase("yes") && !option.equalsIgnoreCase("no"));
         }
     }
 }

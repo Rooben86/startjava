@@ -1,5 +1,6 @@
 package com.startjava.lesson_2_3_4.game;
 
+import java.sql.SQLOutput;
 import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
@@ -8,7 +9,6 @@ public class GuessNumber {
 
     private final Player p1;
     private final Player p2;
-    private Player p0;
     private int randomNumber;
     private Scanner scanner;
 
@@ -18,9 +18,7 @@ public class GuessNumber {
     }
 
     public void play() {
-        randomNumber = new Random().nextInt(100) + 1;
-        p1.clear();
-        p2.clear();
+        init();
         System.out.println("Компьютер загадал число " + "(" + randomNumber + ")" + " У каждого игрока 10 попыток");
         scanner = new Scanner(System.in);
 
@@ -39,28 +37,34 @@ public class GuessNumber {
         printGuesses(p2);
     }
 
-    private boolean isGuessed(Player p0) {
-        String name = p0.getName();
-        System.out.print(name + " , твоя очередь угадывать число: ");
+    private void init() {
+        randomNumber = new Random().nextInt(100) + 1;
+        p1.clear();
+        p2.clear();
+    }
+
+    private boolean isGuessed(Player pl) {
+        String name = pl.getName();
+        System.out.print(name + ", твоя очередь угадывать число: ");
         int guess = scanner.nextInt();
-        p0.setGuess(guess);
-        p0.setAttempt(p0.getAttempt() + 1);
+        pl.setGuess(guess);
+        pl.setAttempt(pl.getAttempt() + 1);
         if (guess == randomNumber) {
-            System.out.println("Игрок " + name + " угадал число " + guess + " с " + p0.getAttempt() + " попытки");
+            System.out.print("\nПоздравляем! Игрок " + name + " угадал число " + guess + " с " + pl.getAttempt() + " попытки");
             return true;
         }
-        if (guess < randomNumber) {
-            System.out.println("Это число меньше, чем загадал компьютер");
-        } else {
-            System.out.println("Это число больше, чем загадал компьютер");
-        }
-        if (p0.getAttempt() == 10) {
+        String str = guess < randomNumber ? "Это число меньше, чем загадал компьютер" : "Это число больше, чем загадал компьютер";
+        System.out.println(str);
+        if (pl.getAttempt() == 10) {
             System.out.println("У " + name + " закончились попытки");
         }
         return false;
     }
 
-    private void printGuesses(Player p0) {
-        System.out.println("Попытки " + p0.getName() + ": " + Arrays.toString(p0.getGuesses()));
+    private void printGuesses(Player pl) {
+        System.out.print("\nПопытки " + pl.getName() + " ");
+        for(int guess : pl.getGuesses()) {
+            System.out.print(guess + " ");
+        }
     }
 }

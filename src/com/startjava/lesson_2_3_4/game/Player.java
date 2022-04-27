@@ -2,7 +2,7 @@ package com.startjava.lesson_2_3_4.game;
 
 import java.util.Arrays;
 
-public class  Player {
+public class Player {
 
     private final String name;
     private int[] guesses;
@@ -11,7 +11,6 @@ public class  Player {
     public Player(String name) {
         this.name = name;
         guesses = new int[10];
-        Arrays.fill(guesses, -1);
     }
 
     public String getName() {
@@ -39,7 +38,7 @@ public class  Player {
     }
 
     public void clear() {
-        Arrays.fill(guesses, 0, attempt, -1);
+        Arrays.fill(guesses, 0, attempt, 0);
         attempt = 0;
     }
 }
