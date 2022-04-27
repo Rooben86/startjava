@@ -53,8 +53,8 @@ public class GuessNumber {
             System.out.print("\nПоздравляем! Игрок " + name + " угадал число " + guess + " с " + pl.getAttempt() + " попытки");
             return true;
         }
-        String str = guess < randomNumber ? "Это число меньше, чем загадал компьютер" : "Это число больше, чем загадал компьютер";
-        System.out.println(str);
+        String str = guess < randomNumber ? "меньше" : "больше";
+        System.out.println("Это число " + str + ", чем загадал компьютер");
         if (pl.getAttempt() == 10) {
             System.out.println("У " + name + " закончились попытки");
         }

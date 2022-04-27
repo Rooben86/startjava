@@ -1,21 +1,13 @@
 package com.startjava.lesson_2_3_4.calculator;
 
 public class Calculator {
-    
-    private int num1;
-    private int num2;
-    private char operation;
-    private String input;
 
-    void setInput(String input) {
-        this.input = input;
-    }
-    public int calc() {
-        String[] str = input.split(" ");
-        num1 = Integer.parseInt(str[0]);
-        operation = str[1].charAt(0);
-        num2 = Integer.parseInt(str[2]);
-        switch (operation) {
+    public int calc(String input) {
+        String[] edited = input.split(" ");
+        int num1 = Integer.parseInt(edited[0]);
+        int num2 = Integer.parseInt(edited[2]);
+
+        switch (edited[1].charAt(0)) {
             case '+' : return Math.addExact(num1, num2);
             case '-' : return Math.subtractExact(num1, num2);
             case '*' : return Math.multiplyExact(num1, num2);
