@@ -1,7 +1,5 @@
 package com.startjava.lesson_2_3_4.game;
 
-import java.sql.SQLOutput;
-import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -19,8 +17,7 @@ public class GuessNumber {
 
     public void play() {
         init();
-        System.out.println("Компьютер загадал число " + "(" + randomNumber + ")" + " У каждого игрока 10 попыток");
-        scanner = new Scanner(System.in);
+        System.out.println("У каждого игрока 10 попыток");
 
         while (true) {
             if (isGuessed(p1)) {
@@ -39,22 +36,24 @@ public class GuessNumber {
 
     private void init() {
         randomNumber = new Random().nextInt(100) + 1;
+        System.out.println("Компьютер загадал число " + "(" + randomNumber + ")");
         p1.clear();
         p2.clear();
     }
 
     private boolean isGuessed(Player pl) {
+        scanner = new Scanner(System.in);
         String name = pl.getName();
         System.out.print(name + ", твоя очередь угадывать число: ");
         int guess = scanner.nextInt();
         pl.setGuess(guess);
         pl.setAttempt(pl.getAttempt() + 1);
         if (guess == randomNumber) {
-            System.out.print("\nПоздравляем! Игрок " + name + " угадал число " + guess + " с " + pl.getAttempt() + " попытки");
+            System.out.print("\nПоздравляем! " + name + " угадал число с " + pl.getAttempt() + " попытки");
             return true;
         }
-        String str = guess < randomNumber ? "меньше" : "больше";
-        System.out.println("Это число " + str + ", чем загадал компьютер");
+        String message = guess < randomNumber ? "меньше" : "больше";
+        System.out.println("Это число " + message + ", чем загадал компьютер");
         if (pl.getAttempt() == 10) {
             System.out.println("У " + name + " закончились попытки");
         }

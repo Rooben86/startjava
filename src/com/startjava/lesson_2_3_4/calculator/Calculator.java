@@ -2,12 +2,12 @@ package com.startjava.lesson_2_3_4.calculator;
 
 public class Calculator {
 
-    public int calc(String input) {
-        String[] edited = input.split(" ");
-        int num1 = Integer.parseInt(edited[0]);
-        int num2 = Integer.parseInt(edited[2]);
+    public int calc(String mathExpression) {
+        String[] array = mathExpression.split(" ");
+        int num1 = Integer.parseInt(array[0]);
+        int num2 = Integer.parseInt(array[2]);
 
-        switch (edited[1].charAt(0)) {
+        switch (array[1].charAt(0)) {
             case '+' : return Math.addExact(num1, num2);
             case '-' : return Math.subtractExact(num1, num2);
             case '*' : return Math.multiplyExact(num1, num2);
