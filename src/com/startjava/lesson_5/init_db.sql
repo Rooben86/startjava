@@ -1,5 +1,5 @@
-jaegers=# INSERT INTO Jaegers(modelName, mark, height, weight, status, launch, kaijuKill)
-jaegers-# VALUES
+INSERT INTO Jaegers(modelName, mark, height, weight, status, launch, kaijuKill)
+VALUES
 ('Atlas Destroyer', 'Mark-3', '80.0', '2.0', 'Destroyed', '2017,01,01.', '8'),
 ('Gipsy Danger', 'Mark-3', '79.25', '1.980', 'Active', '2017,07,10', '9'),
 ('Striker Eureka', 'Mark-5', '76.2', '1.850', 'Active', '2019,11,02', '11'),
